@@ -13,4 +13,4 @@ jobs:
     name: proxy
     steps:
       - run: |
-        echo "Hello, World"
+          echo "Hello, World"
