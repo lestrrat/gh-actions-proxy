@@ -1,12 +1,6 @@
 name: Build
 on:
-  workflow_dispatch:
-    inputs:
-      name:
-        description: 'Person to greet'
-        required: false
-        default: 'Mona the Octocat'
-        token: ${{ secrets.TRIGGER_TOKEN }}
+  workflow_dispatch
 
 jobs:
   build:
@@ -19,6 +13,7 @@ jobs:
           repository: lestrrat/gh-actions-destination
           ref: main
           path: dst
+        token: ${{ secrets.TRIGGER_TOKEN }}
       - run: |
           date > dst/date
       - run:
