@@ -6,11 +6,22 @@ on:
         description: 'Person to greet'
         required: false
         default: 'Mona the Octocat'
+        token: ${{ secrets.TRIGGER_TOKEN }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
     name: proxy
     steps:
+      - name: Checkout destination
+        uses: actions/checkout@v2
+        with:
+          repository: lestrrat/gh-actions-destination
+          ref: main
+          path: dst
       - run: |
-          echo "Hello, World"
+          date > dst/date
+      - run:
+          cd dst
+          git commit -a -m "update date"
+          git push origin main
