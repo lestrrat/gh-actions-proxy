@@ -16,7 +16,7 @@ jobs:
           token: ${{ secrets.TRIGGER_TOKEN }}
       - run: |
           date > dst/date
-      - run:
-          cd dst
+      - run: |
+          cd dst 
           git commit -a -m "update date"
           git push origin main
