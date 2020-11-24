@@ -13,7 +13,7 @@ jobs:
           repository: lestrrat/gh-actions-destination
           ref: main
           path: dst
-        token: ${{ secrets.TRIGGER_TOKEN }}
+          token: ${{ secrets.TRIGGER_TOKEN }}
       - run: |
           date > dst/date
       - run:
