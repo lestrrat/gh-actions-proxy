@@ -18,5 +18,5 @@ jobs:
           date > dst/date
       - run: |
           cd dst 
-          git commit -c user.email=${{ secret.COMMIT_EMAIL }} -c user.name=${{ secret.COMMIT_USERNAME }} -a -m "update date"
+          git commit -c user.email=${{ secrets.COMMIT_EMAIL }} -c user.name=${{ secrets.COMMIT_USERNAME }} -a -m "update date"
           git push origin main
